@@ -4,29 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roots Medicina Herbal</title>
-  <meta name="description" content="Roots Medicina Herbal – Salud integrativa basada en medicina china y andina, fitoterapia, dietoterapia y psiconutrición." />
+  <meta name="description" content="Roots Medicina Herbal – Salud integrativa basada en medicina china y andina." />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f6f2;
-      --text: #2a2a2a;
+      --bg: #f6f5f1;
+      --text: #243024;
       --accent: #4f6f52;
-      --muted: #6b6b6b;
+      --muted: #6a746a;
+      --card: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 6rem 2rem;
       text-align: center;
-      padding: 2rem;
     }
     header h1 {
       font-family: 'Playfair Display', serif;
@@ -34,24 +31,21 @@
       margin-bottom: 1rem;
     }
     header p {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto 2rem;
       color: var(--muted);
       font-size: 1.1rem;
     }
     .btn {
       display: inline-block;
-      padding: 0.75rem 1.5rem;
+      padding: 0.75rem 1.75rem;
       border: 1px solid var(--accent);
       color: var(--accent);
       text-decoration: none;
-      border-radius: 30px;
+      border-radius: 32px;
       transition: all 0.3s ease;
     }
-    .btn:hover {
-      background: var(--accent);
-      color: #fff;
-    }
+    .btn:hover { background: var(--accent); color: #fff; }
     section {
       padding: 4rem 2rem;
       max-width: 1100px;
@@ -64,18 +58,27 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
     }
     .card {
-      background: #fff;
+      background: var(--card);
       padding: 2rem;
-      border-radius: 16px;
+      border-radius: 18px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 1rem;
     }
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 2rem;
       font-size: 0.9rem;
       color: var(--muted);
     }
@@ -84,53 +87,59 @@
 <body>
 
 <header>
-  <div>
-    <h1>Roots Medicina Herbal</h1>
-    <p>
-      Proyecto de salud integrativa basado en la Medicina Tradicional China y la medicina andina, que reconecta la salud con la naturaleza desde la fitoterapia, la dietoterapia y la psiconutrición.
-    </p>
-    <a href="#vision" class="btn">Conocer el proyecto</a>
-  </div>
+  <h1>Roots Medicina Herbal</h1>
+  <p>
+    Proyecto de salud integrativa basado en la Medicina Tradicional China y la medicina andina. Integra fitoterapia, dietoterapia, psiconutrición y botánica contemporánea con un enfoque preventivo y regenerativo.
+  </p>
+  <a href="#consultas" class="btn">Consulta online</a>
 </header>
 
-<section id="vision">
-  <h2>Visión</h2>
+<section>
+  <h2>Nuestros enfoques</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Fitoterapia</h3>
+      <p>Uso terapéutico de plantas medicinales desde una mirada integrativa.</p>
+      <a href="fitoterapia.html">Leer más →</a>
+    </div>
+    <div class="card">
+      <h3>Dietoterapia</h3>
+      <p>La alimentación como herramienta terapéutica y preventiva.</p>
+      <a href="dietoterapia.html">Leer más →</a>
+    </div>
+    <div class="card">
+      <h3>Psiconutrición</h3>
+      <p>Relación entre mente, emoción y alimentación consciente.</p>
+      <a href="psiconutricion.html">Leer más →</a>
+    </div>
+    <div class="card">
+      <h3>Gastronomía sostenible</h3>
+      <p>Cocina saludable conectada con territorio y cultura.</p>
+      <a href="gastronomia.html">Leer más →</a>
+    </div>
+  </div>
+</section>
+
+<section id="consultas">
+  <h2>Consulta online</h2>
   <p>
-    Roots nace del diálogo entre saberes ancestrales y botánica contemporánea. Promueve una salud preventiva, cultural y regenerativa, integrando cuerpo, alimentación, mente y entorno.
+    Ofrecemos consultas personalizadas en dietoterapia, fitoterapia y psiconutrición. Un espacio de acompañamiento integrativo donde se consideran la historia personal, los hábitos, la alimentación y el entorno.
   </p>
-</section>
-
-<section>
-  <h2>Enfoques que integramos</h2>
-  <div class="grid">
-    <div class="card">Fitoterapia</div>
-    <div class="card">Dietoterapia</div>
-    <div class="card">Nutrición consciente</div>
-    <div class="card">Psiconutrición</div>
-    <div class="card">Gastronomía sostenible</div>
-    <div class="card">Investigación farmacobotánica</div>
-  </div>
-</section>
-
-<section>
-  <h2>Qué hacemos hoy</h2>
-  <div class="grid">
-    <div class="card">Productos naturales y herbales</div>
-    <div class="card">Consultas online personalizadas</div>
-    <div class="card">Programas de formación y educación</div>
-    <div class="card">Investigación y documentación botánica</div>
-  </div>
-</section>
-
-<section>
-  <h2>Proyección futura</h2>
   <p>
-    Roots se proyecta como un ecosistema vivo que incluirá huertos medicinales, espacios de aprendizaje, proyectos comunitarios, jardines farmacobotánicos e iniciativas de soberanía alimentaria.
+    Modalidad online · Atención individual · Enfoque preventivo y educativo
+  </p>
+  <a href="mailto:contacto@rootsmedicinaherbal.com" class="btn">Solicitar consulta</a>
+</section>
+
+<section>
+  <h2>Proyección</h2>
+  <p>
+    Roots se proyecta como un ecosistema vivo que incluirá huertos medicinales, espacios de aprendizaje, proyectos comunitarios, jardines farmacobotánicos y acciones de soberanía alimentaria.
   </p>
 </section>
 
 <footer>
-  © 2025 Roots Medicina Herbal · Salud natural, cultura y territorio
+  © 2025 Roots Medicina Herbal · Salud, cultura y territorio
 </footer>
 
 </body>
