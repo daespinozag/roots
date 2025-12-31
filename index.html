@@ -1,169 +1,282 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roots Medicina Herbal</title>
-  <meta name="description" content="Roots Medicina Herbal – Salud integrativa basada en medicina china y andina." />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f6f5f1;
-      --text: #243024;
-      --accent: #4f6f52;
-      --muted: #6a746a;
-      --card: #ffffff;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-    header {
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      margin-bottom: 1rem;
-    }
-    header p {
-      max-width: 760px;
-      margin: 0 auto 2rem;
-      color: var(--muted);
-      font-size: 1.1rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.75rem;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-      border-radius: 32px;
-      transition: all 0.3s ease;
-    }
-    .btn:hover { background: var(--accent); color: #fff; }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: var(--card);
-      padding: 2rem;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-    .card:hover { transform: translateY(-4px); }
-    .card a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: 500;
-      display: inline-block;
-      margin-top: 1rem;
-    }
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Medicina Herbal | Formación Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .bg-herbal { background-color: #f4f7f1; }
+        .text-sage { color: #4a5d4e; }
+        .bg-sage { background-color: #4a5d4e; }
+        .bg-sage:hover { background-color: #3d4d40; }
+        
+        /* Ajustes para el formulario de Mailchimp */
+        #mc_embed_signup { background: transparent !important; width: 100% !important; font-family: 'Inter', sans-serif !important; }
+        #mc_embed_signup .mc-field-group label { color: #4a5d4e !important; font-weight: 600 !important; }
+        #mc_embed_signup .button { background-color: #4a5d4e !important; border-radius: 8px !important; height: 48px !important; transition: all 0.3s !important; }
+        #mc_embed_signup input.text, #mc_embed_signup input.email { border-radius: 8px !important; border: 1px solid #d1d5db !important; padding: 10px !important; }
+
+        /* Estilos del Chat Irene */
+        #chat-container { display: none; }
+        .chat-open { display: flex !important; animation: slideIn 0.3s ease-out; }
+        @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    </style>
 </head>
-<body>
+<body class="bg-herbal text-gray-800">
 
-<header>
-  <h1>Roots Medicina Herbal</h1>
-  <p>
-    Proyecto de salud integrativa basado en la Medicina Tradicional China y la medicina andina. Integra fitoterapia, dietoterapia, psiconutrición y botánica contemporánea con un enfoque preventivo y regenerativo.
-  </p>
-  <a href="#consultas" class="btn">Consulta online</a>
-</header>
+    <!-- Navegación -->
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="flex items-center space-x-3">
+            <img src="Logo_Shizen_Horizontal.png" alt="Shizen" class="h-8 md:h-10">
+            <span class="text-xl font-bold text-sage hidden sm:inline">| Medicina Herbal</span>
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#temario" class="hover:text-sage transition">Temario</a>
+            <a href="#registro" class="hover:text-sage transition">Inscripción</a>
+            <a href="#classroom" class="hover:text-sage transition">Classroom</a>
+        </div>
+        <a href="https://wa.me/593968548185" target="_blank" class="bg-sage text-white px-6 py-2 rounded-full text-sm font-semibold transition transform hover:scale-105">
+            WhatsApp
+        </a>
+    </nav>
 
-<section>
-  <h2>Nuestros enfoques</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Fitoterapia</h3>
-      <p>Uso terapéutico de plantas medicinales desde una mirada integrativa.</p>
-      <a href="fitoterapia.html">Leer más →</a>
+    <!-- Hero Section -->
+    <header class="relative py-12 md:py-24 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="inline-block px-4 py-1 rounded-full bg-green-100 text-sage text-sm font-bold mb-4 uppercase tracking-wider">
+                    Enero 2026 • 80 Horas
+                </span>
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                    Formación Profesional en <span class="text-sage italic">Medicina Herbal</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Aprende el uso consciente de las plantas y la dietoterapia energética oriental para transformar tu salud y bienestar.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#registro" class="bg-sage text-white px-8 py-4 rounded-lg text-center font-bold shadow-lg transition transform hover:-translate-y-1">
+                        Inscribirse Ahora
+                    </a>
+                    <a href="https://classroom.google.com/c/NzkyMTE2NTYwNzM2?cjc=cribqa7b" target="_blank" class="border-2 border-sage text-sage px-8 py-4 rounded-lg text-center font-bold hover:bg-sage hover:text-white transition">
+                        Acceso Directo Classroom
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="w-full h-80 md:h-[500px] bg-gray-200 rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1515446134809-993c501ca304?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Plantas medicinales" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Registro Mailchimp -->
+    <section id="registro" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden grid md:grid-cols-2">
+            <div class="p-8 md:p-12 bg-sage text-white flex flex-col justify-center">
+                <h2 class="text-3xl font-bold mb-4">Inscríbete hoy</h2>
+                <p class="opacity-90 mb-6">Regístrate para recibir el programa completo, costos y el acceso directo al aula virtual una vez confirmado tu cupo.</p>
+                <div class="space-y-4 text-sm">
+                    <div class="flex items-center space-x-3">
+                        <span class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">✓</span>
+                        <span>80 horas de contenido experto.</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">✓</span>
+                        <span>Acceso inmediato a Google Classroom.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 md:p-12">
+                <div id="mc_embed_shell">
+                    <div id="mc_embed_signup">
+                        <form action="https://ymaaecuador.us14.list-manage.com/subscribe/post?u=3803ab7dad11e211cb47e6a39&amp;id=a981edace7&amp;f_id=0074b8e5f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                            <div id="mc_embed_signup_scroll">
+                                <h3 class="text-xl font-bold text-sage mb-6">Formulario de Registro</h3>
+                                <div class="mc-field-group mb-4">
+                                    <label for="mce-FNAME">Nombre Completo</label>
+                                    <input type="text" name="FNAME" class="text w-full p-3 rounded-lg border border-gray-200 mt-1" id="mce-FNAME" value="" placeholder="Ej. Juan Pérez">
+                                </div>
+                                <div class="mc-field-group mb-4">
+                                    <label for="mce-EMAIL">Email <span class="asterisk text-red-500">*</span></label>
+                                    <input type="email" name="EMAIL" class="required email w-full p-3 rounded-lg border border-gray-200 mt-1" id="mce-EMAIL" value="" required="" placeholder="tu@email.com">
+                                </div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display: none;"></div>
+                                    <div class="response" id="mce-success-response" style="display: none;"></div>
+                                </div>
+                                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                    <input type="text" name="b_3803ab7dad11e211cb47e6a39_a981edace7" tabindex="-1" value="">
+                                </div>
+                                <div class="optionalParent mt-6">
+                                    <div class="clear foot">
+                                        <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button w-full cursor-pointer font-bold py-3 uppercase tracking-wider" value="Enviar Registro">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classroom Section -->
+    <section id="classroom" class="py-16 px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/Google_Classroom_Logo.png" alt="Google Classroom" class="h-16 mx-auto mb-6">
+            <h2 class="text-2xl font-bold mb-4">Aula Virtual y Grabaciones</h2>
+            <p class="text-gray-600 mb-4">Utilizamos Google Classroom para centralizar todas nuestras clases grabadas y documentos técnicos. Una vez inscrito, podrás acceder desde cualquier dispositivo.</p>
+            <p class="text-sm font-mono bg-white p-2 rounded inline-block mb-8 border border-gray-100">Código de clase: <strong>cribqa7b</strong></p>
+            <br>
+            <a href="https://classroom.google.com/c/NzkyMTE2NTYwNzM2?cjc=cribqa7b" target="_blank" class="bg-sage text-white px-10 py-4 rounded-lg font-black text-lg hover:opacity-90 transition shadow-xl inline-block">
+                IR AL CLASSROOM →
+            </a>
+        </div>
+    </section>
+
+    <!-- Marcas Aliadas -->
+    <section class="py-16 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            <img src="Logo_Shizen_Horizontal.png" alt="Shizen" class="h-12 md:h-16 object-contain opacity-80 hover:opacity-100 transition">
+            <img src="Logo_YMAA_Horizontal.png" alt="YMAA Ecuador" class="h-12 md:h-16 object-contain opacity-80 hover:opacity-100 transition">
+            <img src="Logo_Anahata.png" alt="Anahata" class="h-12 md:h-16 object-contain opacity-80 hover:opacity-100 transition">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sage text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10 items-center border-b border-white/10 pb-10 mb-8">
+            <div class="flex justify-center md:justify-start">
+                <img src="Logo_Shizen_Horizontal.png" alt="Shizen" class="h-10 brightness-0 invert">
+            </div>
+            <div class="text-center italic">"Plantas que curan, alimentos que sanan."</div>
+            <div class="text-center md:text-right space-y-1">
+                <p class="font-bold">WhatsApp: 0968548185</p>
+                <p class="text-sm opacity-80">shizen.ymaaecuador.com</p>
+            </div>
+        </div>
+        <div class="text-center text-xs opacity-60">© 2025 Shizen & YMAA Ecuador.</div>
+    </footer>
+
+    <!-- WIDGET IRENE -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="chat-toggle" class="bg-sage text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+        </button>
+
+        <div id="chat-container" class="absolute bottom-20 right-0 w-[350px] md:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl flex-col border border-gray-100 overflow-hidden">
+            <div class="bg-sage p-4 text-white flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center font-bold italic">I</div>
+                    <div>
+                        <p class="font-bold leading-none">Irene</p>
+                        <p class="text-[10px] opacity-80">Experta en Medicina Herbal</p>
+                    </div>
+                </div>
+                <button id="chat-close" class="hover:bg-black/10 p-1 rounded">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l18 18"></path></svg>
+                </button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-sm bg-gray-50">
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100">
+                    Hola, soy **Irene**. Soy tu asistente experta en medicina herbal de Shizen. ¿Tienes alguna duda sobre el curso o sobre cómo las plantas pueden ayudarte hoy? 🌿
+                </div>
+            </div>
+            <div id="chat-loading" class="hidden px-4 py-2 text-xs text-gray-400 animate-pulse italic">Irene está pensando...</div>
+            <div class="p-4 border-t border-gray-100 bg-white">
+                <div class="flex space-x-2">
+                    <input type="text" id="chat-input" placeholder="Pregúntale a Irene..." class="flex-1 bg-gray-50 border-none rounded-lg px-4 py-2 focus:ring-1 focus:ring-sage text-sm outline-none">
+                    <button id="send-btn" class="text-sage p-2 hover:bg-gray-100 rounded-full transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <h3>Dietoterapia</h3>
-      <p>La alimentación como herramienta terapéutica y preventiva.</p>
-      <a href="dietoterapia.html">Leer más →</a>
-    </div>
-    <div class="card">
-      <h3>Psiconutrición</h3>
-      <p>Relación entre mente, emoción y alimentación consciente.</p>
-      <a href="psiconutricion.html">Leer más →</a>
-    </div>
-    <div class="card">
-      <h3>Gastronomía sostenible</h3>
-      <p>Cocina saludable conectada con territorio y cultura.</p>
-      <a href="gastronomia.html">Leer más →</a>
-    </div>
-  </div>
-</section>
 
-<section id="academia">
-  <h2>Academia Roots</h2>
-  <p>
-    Roots desarrolla espacios de formación y educación continua en salud integrativa, herbolaria, dietoterapia y alimentación consciente. La academia está orientada a terapeutas, profesionales de la salud y personas interesadas en un enfoque preventivo y cultural de la medicina.
-  </p>
-  <p>
-    Modalidad online · Cursos introductorios y programas formativos · Enfoque ético y basado en saberes ancestrales
-  </p>
-</section>
+    <!-- Scripts de Mailchimp -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array(); window.ftypes = new Array();
+            fnames[1]='FNAME';ftypes[1]='text';
+            fnames[0]='EMAIL';ftypes[0]='email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
 
-<section id="proyectos">
-  <h2>Proyectos</h2>
-  <p>
-    Roots impulsa proyectos de investigación, educación y acción comunitaria vinculados a las plantas medicinales y la salud territorial.
-  </p>
-  <div class="grid">
-    <div class="card">Huertos medicinales y huertas orgánicas</div>
-    <div class="card">Investigación farmacobotánica aplicada</div>
-    <div class="card">Proyectos comunitarios y educativos</div>
-    <div class="card">Jardines y museos farmacobotánicos</div>
-  </div>
-</section>
+    <!-- Script Irene -->
+    <script>
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatClose = document.getElementById('chat-close');
+        const chatContainer = document.getElementById('chat-container');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        const loading = document.getElementById('chat-loading');
 
-<section id="consultas">
-  <h2>Consulta online</h2>
-  <p>
-    Ofrecemos consultas personalizadas en dietoterapia, fitoterapia y psiconutrición. Un espacio de acompañamiento integrativo donde se consideran la historia personal, los hábitos, la alimentación y el entorno.
-  </p>
-  <p>
-    Modalidad online · Atención individual · Enfoque preventivo y educativo
-  </p>
-  <a href="mailto:contacto@rootsmedicinaherbal.com" class="btn">Solicitar consulta</a>
-</section>
+        const apiKey = ""; 
 
-<section>
-  <h2>Proyección</h2>
-  <p>
-    Roots se proyecta como un ecosistema vivo que incluirá huertos medicinales, espacios de aprendizaje, proyectos comunitarios, jardines farmacobotánicos y acciones de soberanía alimentaria.
-  </p>
-</section>
+        chatToggle.onclick = () => chatContainer.classList.toggle('chat-open');
+        chatClose.onclick = () => chatContainer.classList.remove('chat-open');
 
-<footer>
-  © 2025 Roots Medicina Herbal · Salud, cultura y territorio
-</footer>
+        async function askIrene(query) {
+            loading.classList.remove('hidden');
+            const systemPrompt = "Eres Irene, una experta en Medicina Herbal de Shizen, YMAA Ecuador y Anahata. Ayuda a los usuarios con dudas sobre el Curso de Medicina Herbal (80 horas). El link al Classroom es https://classroom.google.com/c/NzkyMTE2NTYwNzM2?cjc=cribqa7b y el código es cribqa7b. Sé amable y profesional.";
+            
+            let retries = 5;
+            let delay = 1000;
 
+            while (retries > 0) {
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: query }] }],
+                            systemInstruction: { parts: [{ text: systemPrompt }] }
+                        })
+                    });
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "Tuve un problema. ¿Puedes repetir?";
+                } catch (err) {
+                    retries--;
+                    if (retries === 0) return "Irene no está disponible ahora.";
+                    await new Promise(r => setTimeout(r, delay));
+                    delay *= 2;
+                }
+            }
+        }
+
+        async function handleSend() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+
+            const userDiv = document.createElement('div');
+            userDiv.className = 'bg-sage/10 p-3 rounded-lg shadow-sm ml-8 text-right';
+            userDiv.textContent = text;
+            chatMessages.appendChild(userDiv);
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            const responseText = await askIrene(text);
+            loading.classList.add('hidden');
+
+            const ireneDiv = document.createElement('div');
+            ireneDiv.className = 'bg-white p-3 rounded-lg shadow-sm border border-gray-100 mr-8';
+            ireneDiv.innerHTML = responseText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            chatMessages.appendChild(ireneDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        sendBtn.onclick = handleSend;
+        chatInput.onkeypress = (e) => e.key === 'Enter' && handleSend();
+    </script>
 </body>
 </html>
