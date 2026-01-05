@@ -6,10 +6,8 @@
     <title>Medicina Herbal | Shizen - YMAA Ecuador</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
     <style>
         :root {
-            /* Paleta Botánica de Día */
             --shizen-green: #1B3A27;
             --herbal-accent: #4B5D44;
             --shizen-gold: #C5A47E;
@@ -19,7 +17,6 @@
             --border-color: rgba(0,0,0,0.05);
         }
 
-        /* Paleta Botánica de Noche (Bosque Profundo) */
         .dark {
             --shizen-green: #9DB28C; 
             --herbal-accent: #8FA485;
@@ -34,23 +31,21 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--shizen-bg);
             color: var(--shizen-text);
-            transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s ease;
+            transition: background-color 0.6s ease, color 0.4s ease;
             -webkit-font-smoothing: antialiased;
-            font-size: 16px;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3 {
             font-family: 'EB Garamond', serif;
             color: var(--shizen-green);
-            font-style: normal;
-            letter-spacing: -0.02em;
         }
 
         .nav-text {
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 11px;
-            font-weight: 500;
+            letter-spacing: 0.15em;
+            font-size: 10px;
+            font-weight: 600;
             color: #666;
             transition: all 0.3s ease;
             white-space: nowrap;
@@ -58,35 +53,22 @@
 
         .dark .nav-text { color: #A0A0A0; }
 
-        .nav-text:hover {
-            color: var(--herbal-accent);
-            letter-spacing: 0.23em;
-        }
-
         .shizen-header {
             background-color: var(--shizen-bg);
-            opacity: 0.98;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
-            transition: background-color 0.6s ease;
         }
-
-        .nav-scroll-container {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        .nav-scroll-container::-webkit-scrollbar { display: none; }
 
         .cta-herbal {
             display: inline-block;
-            padding: 1.2rem 2.8rem;
+            padding: 1rem 2rem;
             border: 1px solid var(--herbal-accent);
             text-transform: uppercase;
-            letter-spacing: 0.3em;
-            font-size: 11px;
-            font-weight: 600;
+            letter-spacing: 0.2em;
+            font-size: 10px;
+            font-weight: 700;
             border-radius: 12px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.4s ease;
             text-decoration: none;
         }
 
@@ -95,39 +77,27 @@
             color: #ffffff;
         }
 
-        .cta-herbal-solid:hover {
-            background-color: var(--shizen-green);
-            transform: translateY(-2px);
-        }
-
         .btn-contacto {
             background-color: var(--shizen-gold);
             color: #1B3A27 !important;
-            padding: 10px 20px;
-            font-weight: 700 !important;
-            border: none !important;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        .btn-contacto:hover {
-            background-color: var(--shizen-green);
-            color: white !important;
-            transform: scale(1.05);
+            padding: 8px 16px;
+            border-radius: 10px;
         }
 
+        /* Estilo de Tarjetas de Módulo con Animación */
         .module-card {
             background-color: var(--card-bg);
-            transition: all 0.4s ease;
             border: 1px solid var(--border-color);
             border-radius: 24px;
-            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        
+
         .module-card:hover {
             border-color: var(--shizen-gold);
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
+
         .dark .module-card:hover {
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
@@ -136,328 +106,233 @@
             background: none;
             border: 1px solid var(--shizen-gold);
             color: var(--shizen-gold);
-            padding: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
+            padding: 6px;
             border-radius: 10px;
-        }
-        .theme-toggle:hover {
-            background: var(--shizen-gold);
-            color: var(--shizen-bg);
-            transform: rotate(15deg);
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .logo-separator {
             width: 1px;
-            height: 20px;
+            height: 16px;
             background-color: var(--border-color);
-            margin: 0 1rem;
+            margin: 0 0.5rem;
         }
 
-        .dark img { filter: brightness(0.9) contrast(1.1); }
-        .dark .grayscale { filter: grayscale(1) brightness(1.5) opacity(0.5); }
-
-        .paragraph-large {
-            font-size: 15px;
-            line-height: 1.8;
-            letter-spacing: 0.04em;
-        }
-
-        .rounded-botanic { border-radius: 24px; }
-        
-        #mc_embed_signup input.email, #mc_embed_signup input.text {
-            border-radius: 8px !important;
-            padding: 12px !important;
-            border: 1px solid var(--border-color) !important;
-            background-color: transparent !important;
-        }
-        
-        #mc_embed_signup .button {
-            border-radius: 12px !important;
-            background-color: var(--herbal-accent) !important;
-            transition: all 0.3s ease !important;
-        }
-        #mc_embed_signup .button:hover {
-            background-color: var(--shizen-green) !important;
-            transform: translateY(-1px);
-        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         .blog-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 24px;
-            transition: all 0.4s ease;
+            padding: 2rem;
             height: 100%;
             display: flex;
             flex-direction: column;
+            transition: all 0.4s ease;
         }
         .blog-card:hover {
             border-color: var(--shizen-gold);
             transform: translateY(-5px);
-        }
-
-        /* Estilos específicos para que el contenedor del newsletter cambie de color */
-        .newsletter-form-container {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            transition: background-color 0.6s ease, border-color 0.6s ease;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
         }
     </style>
 </head>
-<body class="overflow-x-hidden">
+<body>
 
-    <!-- Header -->
-    <nav class="shizen-header fixed w-full top-0 left-0 z-[1000] px-4 md:px-16 py-4 flex flex-row justify-between items-center">
+    <!-- Header Simplificado -->
+    <nav class="shizen-header fixed w-full top-0 left-0 z-[1000] px-4 md:px-16 py-3 flex justify-between items-center">
         <div class="flex items-center shrink-0">
-            <img src="Logo_YMAA_Horizontal.png" alt="YMAA Ecuador" class="h-6 md:h-9 w-auto object-contain">
+            <img src="Logo_YMAA_Horizontal.png" alt="YMAA" class="h-5 md:h-7">
             <div class="logo-separator"></div>
-            <img src="Logo_Shizen_Horizontal.png" alt="Shizen" class="h-6 md:h-9 w-auto object-contain">
+            <img src="Logo_Shizen_Horizontal.png" alt="Shizen" class="h-5 md:h-7">
         </div>
         
         <div class="flex items-center gap-4">
-            <div class="nav-scroll-container overflow-x-auto">
-                <div class="flex items-center gap-4 md:gap-6">
-                    <a href="https://shizen.ymaaecuador.com" target="_blank" rel="noopener noreferrer" class="nav-text">Inicio</a>
-                    <a href="#programa" class="nav-text">Programa</a>
-                    <a href="#admision" class="nav-text">Inscripciones</a>
-                    <a href="https://classroom.google.com/c/NzkyMTE2NTYwNzM2" target="_blank" rel="noopener noreferrer" class="nav-text">Aula Virtual</a>
-                    <a href="#newsletter" class="nav-text">Newsletter</a>
-                    <a href="https://wa.me/593968548185" target="_blank" class="nav-text btn-contacto">Contacto</a>
-                    
-                    <button id="dark-mode-toggle" class="theme-toggle" title="Cambiar a Modo Botánico">
-                        <svg id="moon-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                        </svg>
-                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 15a5 5 0 100-10 5 5 0 000 10zM10 0a1 1 0 011 1v2a1 1 0 11-2 0V1a1 1 0 011-1zM10 16a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM4.22 4.22a1 1 0 011.414 0l1.415 1.414a1 1 0 11-1.414 1.415L4.22 5.636a1 1 0 010-1.414zM12.95 12.95a1 1 0 011.414 0l1.415 1.414a1 1 0 11-1.414 1.415l-1.415-1.414a1 1 0 010-1.414zM0 10a1 1 0 011-1h2a1 1 0 110 2H1a1 1 0 01-1-1zM16 10a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1zM4.22 15.78a1 1 0 010-1.414l1.414-1.415a1 1 0 111.415 1.414l-1.414 1.415a1 1 0 01-1.414 0zM12.95 4.22a1 1 0 010-1.414l1.414-1.415a1 1 0 111.415 1.414L12.95 5.636a1 1 0 01-1.414 0z"></path>
-                        </svg>
-                    </button>
-                </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#programa" class="nav-text">Programa</a>
+                <a href="#inscripcion" class="nav-text">Inscripciones</a>
             </div>
+            <a href="https://wa.me/593968548185" target="_blank" class="nav-text btn-contacto">Contacto</a>
+            <button id="dark-mode-toggle" class="theme-toggle">
+                <svg id="moon-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="sun-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15a5 5 0 100-10 5 5 0 000 10zM10 0a1 1 0 011 1v2a1 1 0 11-2 0V1a1 1 0 011-1zM10 16a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM4.22 4.22a1 1 0 011.414 0l1.415 1.414a1 1 0 11-1.414 1.415L4.22 5.636a1 1 0 010-1.414zM12.95 12.95a1 1 0 011.414 0l1.415 1.414a1 1 0 11-1.414 1.415l-1.415-1.414a1 1 0 010-1.414zM0 10a1 1 0 011-1h2a1 1 0 110 2H1a1 1 0 01-1-1zM16 10a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1zM4.22 15.78a1 1 0 010-1.414l1.414-1.415a1 1 0 111.415 1.414l-1.414 1.415a1 1 0 01-1.414 0zM12.95 4.22a1 1 0 010-1.414l1.414-1.415a1 1 0 111.415 1.414L12.95 5.636a1 1 0 01-1.414 0z"></path></svg>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative pt-48 pb-20 md:pt-60 md:pb-32 px-6 md:px-16 overflow-hidden">
-        <div class="max-w-7xl mx-auto flex flex-col items-start lg:w-2/3">
+    <!-- Hero -->
+    <header class="relative pt-32 pb-16 md:pt-52 md:pb-32 px-6 md:px-16 text-left">
+        <div class="max-w-7xl mx-auto">
             <div class="reveal">
-                <div class="flex items-center gap-4 mb-8">
-                    <span class="w-8 h-[1px] bg-[#4B5D44]"></span>
-                    <p class="nav-text text-[#4B5D44]">Enero 2026 • Programa de 80 horas</p>
+                <p class="nav-text text-[#C5A47E] mb-4">Formación Enero 2026</p>
+                <h1 class="text-5xl md:text-9xl leading-[0.9] mb-8 tracking-tighter">Medicina <br><span class="opacity-20">Herbal</span></h1>
+                <p class="text-sm md:text-lg text-gray-400 max-w-lg mb-10 leading-relaxed">Domina el poder curativo de los alimentos y las plantas desde la sabiduría de la Medicina Tradicional China.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#inscripcion" class="cta-herbal cta-herbal-solid text-center">Inscribirme ahora</a>
+                    <a href="#programa" class="cta-herbal text-gray-400 text-center border-gray-200">Ver Contenido</a>
                 </div>
-                <h1 class="text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] mb-10 tracking-tighter">
-                    Medicina <br> <span class="opacity-30">Herbal</span>
-                </h1>
-                <p class="paragraph-large text-gray-400 max-w-xl mb-12">
-                    Estudio integrativo del poder curativo de los alimentos y las plantas medicinales desde la perspectiva de la Teoría de los Cinco Elementos de la Medicina Tradicional China.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#admision" class="cta-herbal cta-herbal-solid text-center">Inscripciones</a>
-                    <a href="#programa" class="cta-herbal border-gray-200 text-gray-400 text-center">Ver Programa</a>
-                </div>
-            </div>
-            
-            <div class="absolute top-1/2 right-10 md:right-24 -translate-y-1/2 opacity-5 pointer-events-none">
-                <svg width="400" height="400" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-                    <circle cx="50" cy="50" r="45" stroke-width="0.5" />
-                    <path d="M50 5 L50 95 M5 50 L95 50" stroke-width="0.2" />
-                </svg>
             </div>
         </div>
     </header>
 
-    <!-- Dirigido a -->
-    <section class="py-24 bg-[#FDFBF7] dark:bg-white/5 transition-colors">
-        <div class="max-w-7xl mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-20 items-center">
+    <!-- Valor -->
+    <section class="py-20 bg-[#FDFBF7] dark:bg-white/5 px-6">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div class="reveal">
-                <h2 class="text-4xl md:text-6xl mb-8 uppercase tracking-tight">Sobre el Programa</h2>
-                <p class="paragraph-large text-gray-400">
-                    La dietoterapia energética china es un pilar fundamental de la Medicina Tradicional China, ya que utiliza los alimentos como herramienta terapéutica para regular el sistema energético y prevenir desequilibrios. Este curso aborda su aplicación práctica y su complementariedad con las plantas medicinales, integrando la sabiduría ancestral con enfoques orientados al cuidado de la salud contemporánea.                
+                <h2 class="text-3xl md:text-5xl mb-6 uppercase">Tu salud en tus manos</h2>
+                <p class="text-sm md:text-base text-gray-400 leading-loose">
+                    La dietoterapia energética china es un pilar fundamental de la Medicina Tradicional China, ya que utiliza los alimentos como herramienta terapéutica para regular el sistema energético y prevenir desequilibrios. Este curso aborda su aplicación práctica y su complementariedad con las plantas medicinales, integrando la sabiduría ancestral con enfoques orientados al cuidado de la salud contemporánea.
                 </p>
             </div>
-            <div class="reveal" style="transition-delay: 200ms;">
-                <h3 class="text-2xl mb-8 uppercase tracking-widest text-[#C5A47E]">Dirigido a:</h3>
-                <ul class="space-y-6">
-                    <li class="flex items-start gap-4">
-                        <span class="w-2 h-2 mt-2 bg-[#C5A47E] shrink-0 rounded-full"></span>
-                        <p class="paragraph-large text-gray-400 uppercase tracking-widest">Profesionales de la salud interesados en terapias complementarias y naturales.</p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <span class="w-2 h-2 mt-2 bg-[#C5A47E] shrink-0 rounded-full"></span>
-                        <p class="paragraph-large text-gray-400 uppercase tracking-widest">Estudiantes y practicantes de Medicina Tradicional China y Artes Internas.</p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <span class="w-2 h-2 mt-2 bg-[#C5A47E] shrink-0 rounded-full"></span>
-                        <p class="paragraph-large text-gray-400 uppercase tracking-widest">Personas que buscan gestionar su bienestar de forma consciente y autónoma.</p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <span class="w-2 h-2 mt-2 bg-[#C5A47E] shrink-0 rounded-full"></span>
-                        <p class="paragraph-large text-gray-400 uppercase tracking-widest">Emprendedores en el área de bienestar y productos herbarios artesanales.</p>
-                    </li>
-                </ul>
+            <div class="reveal space-y-4" style="transition-delay: 100ms;">
+                <div class="flex items-center gap-4 p-4 border border-black/5 dark:border-white/5 rounded-xl">
+                    <span class="w-2 h-2 bg-[#C5A47E] rounded-full"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest">80 Horas de formación</span>
+                </div>
+                <div class="flex items-center gap-4 p-4 border border-black/5 dark:border-white/5 rounded-xl">
+                    <span class="w-2 h-2 bg-[#C5A47E] rounded-full"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest">Enfoque 100% Práctico</span>
+                </div>
+                <div class="flex items-center gap-4 p-4 border border-black/5 dark:border-white/5 rounded-xl">
+                    <span class="w-2 h-2 bg-[#C5A47E] rounded-full"></span>
+                    <span class="text-xs font-bold uppercase tracking-widest">Certificación YMAA</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Temario -->
-    <section id="programa" class="py-32 px-6 md:px-16">
+    <!-- El Programa -->
+    <section id="programa" class="py-24 px-6 md:px-16">
         <div class="max-w-7xl mx-auto">
             <div class="mb-24 flex flex-col items-center">
-                <h2 class="text-5xl md:text-7xl mb-10 tracking-tight text-center uppercase">Contenido</h2>
+                <h2 class="text-4xl md:text-7xl text-center mb-10 uppercase tracking-tight">El Programa</h2>
                 <div class="w-px h-24 bg-[#4B5D44] mb-8"></div>
-                <p class="nav-text text-gray-400">Formación 2026</p>
+                <p class="nav-text text-gray-400">Contenido Curricular 2026</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-5xl mx-auto mb-24">
-                <div class="module-card p-10">
-                    <p class="nav-text text-[#C5A47E] mb-6">Módulo 01</p>
-                    <h3 class="text-3xl mb-6">Dietoterapia Energética China</h3>
-                    <p class="paragraph-large text-gray-400">
-                        Estudio de naturalezas térmicas, sabores e impacto en la energía vital de cada órgano según la tradición oriental.
-                    </p>
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto mb-24">
+                <div class="module-card p-8 md:p-10">
+                    <p class="nav-text text-[#C5A47E] mb-4">Módulo 01</p>
+                    <h3 class="text-2xl md:text-3xl mb-4">Dietoterapia Energética China</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Estudio de naturalezas térmicas, sabores e impacto en la energía vital de cada órgano según la tradición oriental.</p>
                 </div>
-                <div class="module-card p-10">
-                    <p class="nav-text text-[#C5A47E] mb-6">Módulo 02</p>
-                    <h3 class="text-3xl mb-6">Medicina Oriental y 5 Elementos</h3>
-                    <p class="paragraph-large text-gray-400">
-                        Comprensión profunda de los ciclos naturales, el Yin-Yang y el sistema de correspondencias energéticas.
-                    </p>
+                <div class="module-card p-8 md:p-10">
+                    <p class="nav-text text-[#C5A47E] mb-4">Módulo 02</p>
+                    <h3 class="text-2xl md:text-3xl mb-4">Medicina Oriental y 5 Elementos</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Comprensión profunda de los ciclos naturales, el Yin-Yang y el sistema de correspondencias energéticas.</p>
                 </div>
-                <div class="module-card p-10">
-                    <p class="nav-text text-[#C5A47E] mb-6">Módulo 03</p>
-                    <h3 class="text-3xl mb-6">Uso de Plantas Medicinales</h3>
-                    <p class="paragraph-large text-gray-400">
-                        Identificación botánica técnica y energética para el cuidado preventivo y el equilibrio diario de la salud.
-                    </p>
+                <div class="module-card p-8 md:p-10">
+                    <p class="nav-text text-[#C5A47E] mb-4">Módulo 03</p>
+                    <h3 class="text-2xl md:text-3xl mb-4">Uso de Plantas Medicinales</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Identificación botánica técnica y energética para el cuidado preventivo y el equilibrio diario de la salud.</p>
                 </div>
-                <div class="module-card p-10">
-                    <p class="nav-text text-[#C5A47E] mb-6">Módulo 04</p>
-                    <h3 class="text-3xl mb-6">Aplicaciones Terapéuticas</h3>
-                    <p class="paragraph-large text-gray-400">
-                        Protocolos específicos por sistemas corporales, elaboración de remedios artesanales y sinergias herbales complejas.
-                    </p>
+                <div class="module-card p-8 md:p-10">
+                    <p class="nav-text text-[#C5A47E] mb-4">Módulo 04</p>
+                    <h3 class="text-2xl md:text-3xl mb-4">Aplicaciones Terapéuticas</h3>
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Protocolos específicos por sistemas corporales, elaboración de remedios artesanales y sinergias herbales complejas.</p>
                 </div>
             </div>
+            <div class="mt-4 text-center reveal">
+                <a href="https://drive.google.com/drive/folders/1P3mu_QrWbi2E2n1t0UaAUNivKdEzemxr?usp=sharing" target="_blank" class="nav-text border-b border-[#C5A47E] pb-1">Descargar pensum completo</a>
+            </div>
+        </div>
+    </section>
 
-            <div class="flex justify-center reveal">
-                <a href="https://drive.google.com/drive/folders/1P3mu_QrWbi2E2n1t0UaAUNivKdEzemxr?usp=sharing" target="_blank" class="cta-herbal border-[#C5A47E] text-[#C5A47E] hover:bg-[#C5A47E] hover:text-white transition-all duration-500">
-                    Descargar Programa Completo
+    <!-- Sabiduría Herbal -->
+    <section class="py-24 px-6 md:px-16 bg-[#FDFBF7] dark:bg-white/5 transition-colors">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl md:text-6xl uppercase mb-4 tracking-tight">Sabiduría Herbal</h2>
+                <p class="text-xs text-gray-400 tracking-[0.2em] uppercase">Explora nuestro conocimiento</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="reveal">
+                    <a href="https://shizen.ymaaecuador.com/2025/09/29/medicinaherbal/" target="_blank" class="blog-card">
+                        <p class="nav-text text-[#C5A47E] mb-4">Fundamentos</p>
+                        <h3 class="text-2xl md:text-3xl mb-4">La esencia de la Medicina Herbal</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-8">Cómo la naturaleza ofrece herramientas sencillas y efectivas para cuidar la salud desde el equilibrio natural.</p>
+                        <div class="mt-auto">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-[#4B5D44] border-b border-[#4B5D44] pb-1">Leer artículo</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="reveal" style="transition-delay: 100ms;">
+                    <a href="https://shizen.ymaaecuador.com/2025/09/29/medicinaherbal/" target="_blank" class="blog-card">
+                        <p class="nav-text text-[#C5A47E] mb-4">Milenario</p>
+                        <h3 class="text-2xl md:text-3xl mb-4">El alma de las plantas</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed mb-8">Los Cinco Elementos simbolizan los ciclos del universo manifestados en el reino vegetal.</p>
+                        <div class="mt-auto">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-[#4B5D44] border-b border-[#4B5D44] pb-1">Leer artículo</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inscripción -->
+    <section id="inscripcion" class="py-24 px-6 bg-[#1B3A27] text-white mx-4 md:mx-16 rounded-[40px] relative overflow-hidden mt-12 shadow-2xl">
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-7xl text-white mb-8 uppercase tracking-tighter">Inscríbete</h2>
+            <p class="text-sm md:text-lg text-white/60 mb-12 max-w-md mx-auto">Solicita tu entrevista informativa y asegura tu cupo para esta formación única.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="p-6 bg-white/5 rounded-2xl">
+                    <span class="block text-2xl font-serif mb-2 text-[#C5A47E]">01</span>
+                    <p class="text-[10px] uppercase tracking-widest text-white/60">Entrevista Inicial</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl">
+                    <span class="block text-2xl font-serif mb-2 text-[#C5A47E]">02</span>
+                    <p class="text-[10px] uppercase tracking-widest text-white/60">Reserva de Cupo</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl">
+                    <span class="block text-2xl font-serif mb-2 text-[#C5A47E]">03</span>
+                    <p class="text-[10px] uppercase tracking-widest text-white/60">Inicio Enero</p>
+                </div>
+            </div>
+            <a href="https://wa.me/593968548185" target="_blank" class="cta-herbal bg-white text-[#1B3A27] px-12 py-5 font-black hover:bg-[#C5A47E] hover:text-white border-none transition-all">Empezar Inscripción</a>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="py-24 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl uppercase mb-4 tracking-tight">Mantente conectado</h2>
+            <p class="text-[10px] text-gray-400 tracking-[0.3em] uppercase">Recibe actualizaciones y sabiduría herbal</p>
+        </div>
+        <div class="p-8 md:p-12 border border-black/5 dark:border-white/5 rounded-[30px] bg-card shadow-sm">
+            <form action="https://ymaaecuador.us14.list-manage.com/subscribe/post?u=3803ab7dad11e211cb47e6a39&amp;id=a981edace7&amp;f_id=0074b8e5f0" method="post" target="_blank" class="space-y-8">
+                <div>
+                    <label class="nav-text block mb-2 dark:text-gray-400">Nombre Completo</label>
+                    <input type="text" name="FNAME" class="w-full bg-transparent border-b border-gray-200 dark:border-white/10 py-3 outline-none text-sm focus:border-[#C5A47E] transition-colors dark:text-white" placeholder="EJ. MARIA GARCIA">
+                </div>
+                <div>
+                    <label class="nav-text block mb-2 dark:text-gray-400">Correo Electrónico *</label>
+                    <input type="email" name="EMAIL" required class="w-full bg-transparent border-b border-gray-200 dark:border-white/10 py-3 outline-none text-sm focus:border-[#C5A47E] transition-colors dark:text-white" placeholder="EMAIL@EJEMPLO.COM">
+                </div>
+                <button type="submit" class="w-full bg-[#4B5D44] text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-[#1B3A27] transition-colors shadow-lg shadow-black/5">Suscribirse</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-100 dark:border-white/5 text-center">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4">
+                <img src="Logo_Shizen_Horizontal.png" alt="Shizen" class="h-6 opacity-60">
+                <div class="logo-separator"></div>
+                <img src="Logo_YMAA_Horizontal.png" alt="YMAA" class="h-6 opacity-60">
+            </div>
+            
+            <a href="https://classroom.google.com/c/NzkyMTE2NTYwNzM2" target="_blank" class="text-[10px] uppercase tracking-widest text-gray-400 hover:text-[#C5A47E]">Acceso Alumnos</a>
+
+            <div class="flex gap-6">
+                <a href="https://instagram.com/shizenmedicina" target="_blank" class="text-gray-400 hover:text-[#C5A47E]">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </a>
             </div>
         </div>
-    </section>
-
-    <!-- Blog -->
-    <section class="py-24 bg-[#FDFBF7] dark:bg-white/5 transition-colors px-6 md:px-16">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16">
-                <h2 class="text-4xl md:text-5xl mb-4 uppercase tracking-tight">Visita nuestro Blog</h2>
-                <div class="w-12 h-[1px] bg-[#C5A47E]"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="reveal">
-                    <a href="https://shizen.ymaaecuador.com/2025/09/29/medicinaherbal/" target="_blank" class="blog-card p-10">
-                        <p class="nav-text text-[#C5A47E] mb-6">Alimentos y Plantas Medicinales</p>
-                        <h3 class="text-3xl mb-6">La esencia de la Medicina Herbal</h3>
-                        <p class="paragraph-large text-gray-400 mb-8">En un mundo donde las enfermedades crónicas y el estrés afectan cada vez más nuestra calidad de vida, la medicina preventiva se ha vuelto una necesidad. La medicina herbal, con miles de años de tradición, ofrece herramientas sencillas y efectivas para cuidar la salud desde el equilibrio entre cuerpo, mente y naturaleza.</p>
-                        <div class="mt-auto">
-                            <span class="nav-text text-[#4B5D44] border-b border-[#4B5D44] pb-1">Leer artículo completo</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="reveal" style="transition-delay: 200ms;">
-                    <a href="https://shizen.ymaaecuador.com/2025/09/29/medicinaherbal/" target="_blank" class="blog-card p-10">
-                        <p class="nav-text text-[#C5A47E] mb-6">Sabiduría Milenaria</p>
-                        <h3 class="text-3xl mb-6">El alma de las plantas</h3>
-                        <p class="paragraph-large text-gray-400 mb-8">Desde tiempos antiguos, el ser humano ha buscado comprender cómo la naturaleza se manifiesta dentro y fuera de sí. En la Medicina Tradicional China, esto se expresa a través de los Cinco Elementos —Madera, Fuego, Tierra, Metal y Agua—, que simbolizan los ciclos del universo y las dinámicas del cuerpo, la mente y el espíritu.</p>
-                        <div class="mt-auto">
-                            <span class="nav-text text-[#4B5D44] border-b border-[#4B5D44] pb-1">Leer artículo completo</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Secciones Finales -->
-    <div class="space-y-12 mb-20 mt-12">
-        <!-- Aula Virtual (Simplificada) -->
-        <section id="aula" class="px-6">
-            <div class="max-w-xl mx-auto newsletter-form-container p-10 text-center rounded-botanic">
-                <p class="nav-text text-[#4B5D44] mb-4">Estudiantes activos</p>
-                <h2 class="text-3xl mb-8 tracking-tight">Aula Virtual</h2>
-                <a href="https://classroom.google.com/c/NzkyMTE2NTYwNzM2" target="_blank" rel="noopener noreferrer" class="cta-herbal border-[#C5A47E] text-[#C5A47E] hover:bg-[#C5A47E] hover:text-white px-10 transition-all duration-500">Acceso a Grabaciones</a>
-            </div>
-        </section>
-
-        <!-- Newsletter (Corregido y Compacto) -->
-        <section id="newsletter" class="bg-[#1B3A27] text-white py-20 px-6 md:px-16 relative overflow-hidden rounded-botanic mx-4 md:mx-16">
-            <div class="absolute inset-0 opacity-10 pointer-events-none">
-                <svg width="100%" height="100%"><pattern id="grid-news" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/></pattern><rect width="100%" height="100%" fill="url(#grid-news)" /></svg>
-            </div>
-            <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                <div>
-                    <h2 class="text-4xl md:text-5xl mb-6 tracking-tight uppercase text-white">Newsletter</h2>
-                    <p class="paragraph-large text-white/60 max-w-sm">
-                        Suscríbete para recibir más información sobre nuestras actividades y sabiduría herbal.
-                    </p>
-                </div>
-                <div class="newsletter-form-container p-8 md:p-10 shadow-xl rounded-botanic">
-                    <div id="mc_embed_signup">
-                        <form action="https://ymaaecuador.us14.list-manage.com/subscribe/post?u=3803ab7dad11e211cb47e6a39&amp;id=a981edace7&amp;f_id=0074b8e5f0" method="post" id="mc-embedded-subscribe-form" class="validate" target="_blank">
-                            <div class="mb-6">
-                                <label class="nav-text block mb-2 dark:text-gray-400">Nombre Completo</label>
-                                <input type="text" name="FNAME" id="mce-FNAME" class="w-full border-b border-gray-200 dark:border-white/10 py-3 outline-none focus:border-[#C5A47E] transition-colors bg-transparent text-sm text-gray-800 dark:text-white" placeholder="EJ. MARIA GARCIA">
-                            </div>
-                            <div class="mb-8">
-                                <label class="nav-text block mb-2 dark:text-gray-400">Correo Electrónico *</label>
-                                <input type="email" name="EMAIL" id="mce-EMAIL" required class="w-full border-b border-gray-200 dark:border-white/10 py-3 outline-none focus:border-[#C5A47E] transition-colors bg-transparent text-sm text-gray-800 dark:text-white" placeholder="EMAIL@EJEMPLO.COM">
-                            </div>
-                            <input type="submit" name="subscribe" class="button w-full py-4 cursor-pointer text-white font-bold uppercase tracking-widest text-xs" value="Suscribirse Ahora">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer class="pt-24 pb-12 px-6 md:px-16 border-t border-gray-100 dark:border-white/5 transition-colors">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-12 mb-20">
-                <div class="flex items-center">
-                    <img src="Logo_Shizen_Horizontal.png" alt="Shizen" class="h-8 opacity-80">
-                    <div class="logo-separator"></div>
-                    <img src="Logo_YMAA_Horizontal.png" alt="YMAA" class="h-8 opacity-80">
-                </div>
-                
-                <div class="flex items-center gap-8">
-                    <a href="https://instagram.com/shizenmedicina" target="_blank" class="text-[#1B3A27] dark:text-[#9DB28C] hover:text-[#C5A47E] transition-all">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                    </a>
-                    <a href="https://facebook.com/shizenmedicina" target="_blank" class="text-[#1B3A27] dark:text-[#9DB28C] hover:text-[#C5A47E] transition-all">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="text-center pt-8 border-t border-gray-50 dark:border-white/5">
-                <p class="nav-text text-gray-300" style="font-size: 10px;">© 2026 Shizen • YMAA Ecuador • Escuela de Medicina China</p>
-            </div>
-        </div>
+        <p class="mt-8 text-[9px] uppercase tracking-[0.3em] text-gray-300">© 2026 Shizen • YMAA Ecuador</p>
     </footer>
 
     <script>
@@ -483,8 +358,7 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
+                if (elementTop < windowHeight - 100) {
                     reveals[i].classList.add("active");
                 }
             }
