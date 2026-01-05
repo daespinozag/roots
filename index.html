@@ -95,62 +95,12 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 24px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: help;
+            transition: border-color 0.4s ease;
+            overflow: hidden;
         }
 
         .module-card:hover {
             border-color: var(--shizen-gold);
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        /* Modal de información ampliado */
-        #module-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        #module-modal.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .modal-content {
-            background-color: var(--card-bg);
-            border: 1px solid var(--shizen-gold);
-            padding: 4rem;
-            border-radius: 40px;
-            max-width: 800px;
-            width: 90%;
-            transform: scale(0.9);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 50px 120px rgba(0,0,0,0.25);
-            text-align: center;
-        }
-
-        #module-modal.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-backdrop {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(12px);
         }
 
         .theme-toggle {
@@ -189,11 +139,12 @@
 
         .img-botanic {
             width: 100%;
-            height: 200px;
+            height: 240px;
             object-fit: cover;
-            filter: grayscale(0.2) contrast(1.1);
+            filter: grayscale(0.2) contrast(1.05);
             transition: transform 0.6s ease;
         }
+        .blog-card:hover .img-botanic { transform: scale(1.05); }
 
         .whatsapp-float {
             position: fixed;
@@ -213,11 +164,6 @@
             animation: pulse-green 2s infinite;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #20ba5a;
-        }
-
         @keyframes pulse-green {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
@@ -226,24 +172,10 @@
 
         @media (max-width: 768px) {
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-            .modal-content { padding: 2.5rem 1.5rem; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Modal de Módulos -->
-    <div id="module-modal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <p id="modal-tag" class="nav-text text-[#C5A47E] mb-4"></p>
-            <h3 id="modal-title" class="text-4xl md:text-5xl mb-8"></h3>
-            <div id="modal-body" class="space-y-4 text-sm md:text-base text-gray-500 uppercase tracking-widest leading-loose">
-                <!-- Contenido dinámico -->
-            </div>
-            <p class="mt-12 text-[10px] text-gray-300 uppercase tracking-widest">Retira el cursor para cerrar</p>
-        </div>
-    </div>
 
     <!-- WhatsApp Flotante -->
     <a href="https://wa.me/593968548185" target="_blank" class="whatsapp-float" aria-label="Contacto por WhatsApp">
@@ -282,7 +214,7 @@
                 </div>
             </div>
             <div class="hidden lg:block reveal" style="transition-delay: 200ms;">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200" alt="Armonía y Elementos MTC" class="w-full h-full object-cover rounded-[40px] shadow-2xl">
+                <img src="MedHerbal01.jpg" alt="Medicina Herbal y Alquimia Natural" class="w-full h-full object-cover rounded-[40px] shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1563213126-a4273aed2016?auto=format&fit=crop&q=80&w=1200'">
             </div>
         </div>
     </header>
@@ -326,44 +258,32 @@
             <div class="mb-24 flex flex-col items-center">
                 <h2 class="text-4xl md:text-7xl text-center mb-10 uppercase tracking-tight">El Programa</h2>
                 <div class="w-px h-24 bg-[#4B5D44] mb-8"></div>
-                <p class="nav-text text-gray-400">Pasa el ratón sobre los módulos</p>
+                <p class="nav-text text-gray-400">Contenido Curricular 2026</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-6 md:gap-12 max-w-5xl mx-auto mb-24">
-                <div class="module-card p-8 md:p-10" 
-                     data-tag="Módulo 01" 
-                     data-title="Dietoterapia Energética China"
-                     data-info="<p>• Naturalezas térmicas de los alimentos.</p><p>• Los 5 sabores y sus órganos diana.</p><p>• Nutrición según las estaciones.</p><p>• Preparación de caldos y tónicos vitales.</p>">
+                <div class="module-card p-8 md:p-10">
                     <p class="nav-text text-[#C5A47E] mb-4">Módulo 01</p>
                     <h3 class="text-2xl md:text-3xl mb-4">Dietoterapia Energética China</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Estudio de naturalezas térmicas, sabores e impacto en la energía vital.</p>
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Estudio de naturalezas térmicas, sabores e impacto en la energía vital de cada órgano según la tradición oriental.</p>
                 </div>
 
-                <div class="module-card p-8 md:p-10"
-                     data-tag="Módulo 02" 
-                     data-title="Medicina Oriental y 5 Elementos"
-                     data-info="<p>• Ciclos de Generación y Control.</p><p>• Teoría del Yin-Yang en la salud.</p><p>• Fisiología de los órganos Zang-Fu.</p><p>• Diagnóstico básico por observación.</p>">
+                <div class="module-card p-8 md:p-10">
                     <p class="nav-text text-[#C5A47E] mb-4">Módulo 02</p>
                     <h3 class="text-2xl md:text-3xl mb-4">Medicina Oriental y 5 Elementos</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Comprensión profunda de los ciclos naturales y el Yin-Yang.</p>
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Comprensión profunda de los ciclos naturales, el Yin-Yang y el sistema de correspondencias energéticas.</p>
                 </div>
 
-                <div class="module-card p-8 md:p-10"
-                     data-tag="Módulo 03" 
-                     data-title="Uso de Plantas Medicinales"
-                     data-info="<p>• Propiedades energéticas de las plantas.</p><p>• Métodos de recolección y secado.</p><p>• Preparación de infusiones y decocciones.</p><p>• Plantas adaptógenas y su uso seguro.</p>">
+                <div class="module-card p-8 md:p-10">
                     <p class="nav-text text-[#C5A47E] mb-4">Módulo 03</p>
                     <h3 class="text-2xl md:text-3xl mb-4">Uso de Plantas Medicinales</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Identificación botánica técnica y energética para el cuidado preventivo.</p>
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Identificación botánica técnica y energética para el cuidado preventivo y el equilibrio diario de la salud.</p>
                 </div>
 
-                <div class="module-card p-8 md:p-10"
-                     data-tag="Módulo 04" 
-                     data-title="Aplicaciones Terapéuticas"
-                     data-info="<p>• Tratamiento de afecciones comunes.</p><p>• Elaboración de tinturas y oleatos.</p><p>• Diseño de sinergias personalizadas.</p><p>• Gestión ética del botiquín herbal.</p>">
+                <div class="module-card p-8 md:p-10">
                     <p class="nav-text text-[#C5A47E] mb-4">Módulo 04</p>
                     <h3 class="text-2xl md:text-3xl mb-4">Aplicaciones Terapéuticas</h3>
-                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Protocolos específicos y elaboración de remedios artesanales.</p>
+                    <p class="text-xs text-gray-400 leading-relaxed uppercase tracking-wider">Protocolos específicos por sistemas corporales, elaboración de remedios artesanales y sinergias herbales complejas.</p>
                 </div>
             </div>
             <div class="mt-4 text-center reveal">
@@ -383,7 +303,7 @@
             <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <div class="reveal">
                     <a href="https://shizen.ymaaecuador.com/2025/09/29/medicinaherbal/" target="_blank" class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&q=80&w=800" alt="Medicina Preventiva" class="img-botanic">
+                        <img src="image_d4ec24.png" alt="Fundamentos" class="img-botanic" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800'">
                         <div class="p-8">
                             <p class="nav-text text-[#C5A47E] mb-4">Fundamentos</p>
                             <h3 class="text-2xl md:text-3xl mb-4">La esencia de la Medicina Herbal</h3>
@@ -394,7 +314,7 @@
                 </div>
                 <div class="reveal" style="transition-delay: 100ms;">
                     <a href="https://shizen.ymaaecuador.com/2025/09/29/medicinaherbal/" target="_blank" class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&q=80&w=800" alt="Ciclos Naturales" class="img-botanic">
+                        <img src="image_d47be3.png" alt="El alma de las plantas" class="img-botanic" onerror="this.src='https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&q=80&w=800'">
                         <div class="p-8">
                             <p class="nav-text text-[#C5A47E] mb-4">Milenario</p>
                             <h3 class="text-2xl md:text-3xl mb-4">El alma de las plantas</h3>
@@ -454,19 +374,16 @@
     <!-- Footer Centrado -->
     <footer class="py-16 px-6 border-t border-gray-100 dark:border-white/5 text-center">
         <div class="max-w-7xl mx-auto flex flex-col items-center gap-10">
-            <!-- Logos -->
             <div class="flex items-center gap-4">
                 <img src="Logo_Shizen_Horizontal.png" alt="Shizen" class="h-6 opacity-60">
                 <div class="logo-separator"></div>
                 <img src="Logo_YMAA_Horizontal.png" alt="YMAA" class="h-6 opacity-60">
             </div>
             
-            <!-- Enlaces -->
             <div class="flex flex-col md:flex-row items-center gap-6 md:gap-12">
                 <a href="https://shizen.ymaaecuador.com" target="_blank" class="nav-text text-gray-500 hover:text-[#C5A47E] transition-colors">Escuela de Medicina China</a>
             </div>
 
-            <!-- Redes Sociales -->
             <div class="flex gap-8">
                 <a href="https://instagram.com/shizenmedicina" target="_blank" class="text-gray-400 hover:text-[#C5A47E] transition-all" aria-label="Instagram">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.668-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
@@ -476,9 +393,8 @@
                 </a>
             </div>
 
-            <!-- Copyright -->
             <div class="text-center pt-8 border-t border-gray-50 dark:border-white/5 w-full">
-                <p class="nav-text text-gray-300" style="font-size: 9px;">© 2026 Shizen • YMAA Ecuador • Medicina Tradicional China</p>
+                <p class="nav-text text-gray-300" style="font-size: 9px;">© 2026 Shizen • YMAA Ecuador • Medicina China</p>
             </div>
         </div>
     </footer>
@@ -499,25 +415,6 @@
                 sunIcon.classList.add('hidden');
                 moonIcon.classList.remove('hidden');
             }
-        });
-
-        // Lógica para el modal de módulos por hover
-        const modal = document.getElementById('module-modal');
-        const modalTag = document.getElementById('modal-tag');
-        const modalTitle = document.getElementById('modal-title');
-        const modalBody = document.getElementById('modal-body');
-        const cards = document.querySelectorAll('.module-card');
-
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                modalTag.textContent = card.dataset.tag;
-                modalTitle.textContent = card.dataset.title;
-                modalBody.innerHTML = card.dataset.info;
-                modal.classList.add('active');
-            });
-            card.addEventListener('mouseleave', () => {
-                modal.classList.remove('active');
-            });
         });
 
         function reveal() {
